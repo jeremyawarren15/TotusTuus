@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using TotusTuus.Data;
 using TotusTuus.Web.Models;
 
 namespace TotusTuus.Web.Controllers
