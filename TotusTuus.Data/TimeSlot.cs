@@ -10,14 +10,18 @@ namespace TotusTuus.Data
 {
     public class TimeSlot
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required]
         public DayOfWeek DayOfWeek { get; set; }
 
+        [Required]
         [Range(0,23)]
         public int Hour { get; set; }
 
-        [Required]
         public DateTimeOffset CreatedDate { get; set; }
+        public DateTimeOffset? RemovedDate { get; set; }
 
         [Required]
         public virtual Parish Parish { get; set; }

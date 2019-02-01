@@ -9,9 +9,9 @@ namespace TotusTuus.Data
 {
     public class SubstitutionHistory
     {
+        [Key]
         public int Id { get; set; }
         
-        [Required]
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset? AssignedDate { get; set; }
 

@@ -11,6 +11,7 @@ namespace TotusTuus.Data
 {
     public class ParishRequest
     {
+        [Key]
         public int Id { get; set; }
 
         [DefaultValue(ParishRequestStatus.Pending)]
