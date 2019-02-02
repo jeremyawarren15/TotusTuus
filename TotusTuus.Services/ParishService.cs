@@ -29,6 +29,11 @@ namespace TotusTuus.Services
             return _context.Parishes;
         }
 
+        public int GetNumberOfParishes()
+        {
+            return _context.Parishes.Count();
+        }
+
         public Parish GetParish(int id)
         {
             return _context.Parishes

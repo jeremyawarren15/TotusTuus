@@ -8,6 +8,7 @@ using TotusTuus.Web.Areas.SuperAdmin.Models.Home;
 
 namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
 {
+    [Authorize(Roles = "SuperAdmin")]
     public class HomeController : Controller
     {
         private IParishService _parishService;
@@ -22,7 +23,7 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
         {
             var model = new HomeIndexViewModel()
             {
-                TotalParishes = _parishService.GetAllParishes().Count()
+                TotalParishes = _parishService.GetNumberOfParishes()
             };
 
             return View(model);
