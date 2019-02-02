@@ -1,3 +1,6 @@
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 namespace TotusTuus.Data.Migrations
 {
     using System;
@@ -27,6 +30,10 @@ namespace TotusTuus.Data.Migrations
             //    );
             //
 
+            CreateRoles(context);
+
+            CreateUsers(context);
+
             var parish = new Parish()
             {
                 ParishName = "St. John the Evangelist",
@@ -41,6 +48,42 @@ namespace TotusTuus.Data.Migrations
             };
 
             context.Parishes.Add(parish);
+        }
+
+        private void CreateRoles(ApplicationDbContext context)
+        {
+            if (!context.Roles.Any(r => r.Name == "SuperAdmin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "SuperAdmin" };
+
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(r => r.Name == "Admin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Admin" };
+
+                manager.Create(role);
+            }
+        }
+
+        private static void CreateUsers(ApplicationDbContext context)
+        {
+            var store = new UserStore<ApplicationUser>(context);
+            var manager = new UserManager<ApplicationUser>(store);
+
+            var superAdmin = new ApplicationUser { FirstName = "Super", LastName = "User", UserName = "super@test.com", Email = "super@test.com" };
+            var admin = new ApplicationUser { FirstName = "Admin", LastName = "User", UserName = "admin@test.com", Email = "admin@test.com" };
+
+            manager.Create(superAdmin, "Test1234!");
+            manager.AddToRole(superAdmin.Id, "SuperAdmin");
+
+            manager.Create(admin, "Test1234!");
+            manager.AddToRole(admin.Id, "Admin");
         }
     }
 }
