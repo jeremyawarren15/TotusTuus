@@ -7,6 +7,9 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
+using TotusTuus.Contracts;
+using TotusTuus.Data;
+using TotusTuus.Services;
 
 namespace TotusTuus.Web
 {
@@ -37,6 +40,10 @@ namespace TotusTuus.Web
 
             // OPTIONAL: Enable property injection into action filters.
             builder.RegisterFilterProvider();
+
+            builder.RegisterType<ApplicationDbContext>().AsSelf().InstancePerRequest();
+
+            builder.RegisterType<ParishService>().As<IParishService>();
 
             // Set the dependency resolver to be Autofac.
             var container = builder.Build();
