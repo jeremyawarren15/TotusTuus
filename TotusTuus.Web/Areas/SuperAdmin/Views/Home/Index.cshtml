@@ -1,7 +1,13 @@
-﻿
+﻿@model TotusTuus.Web.Areas.SuperAdmin.Models.Home.HomeIndexViewModel
 @{
-    ViewBag.Title = "Super Admin Index";
+    ViewBag.Title = "Home";
 }
 
-<h2>Super Admin Index</h2>
+<h2>@ViewBag.Title</h2>
 
+<div class="row">
+    <div class="col-md-4">
+        <h2>Parishes</h2>
+        <p>@Model.TotalParishes</p>
+    </div>
+</div>

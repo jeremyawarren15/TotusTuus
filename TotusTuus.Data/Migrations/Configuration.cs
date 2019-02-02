@@ -26,6 +26,21 @@ namespace TotusTuus.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            var parish = new Parish()
+            {
+                ParishName = "St. John the Evangelist",
+                City = "Indianapolis",
+                Archdiocese = "Indianapolis",
+                CreatedDate = DateTimeOffset.UtcNow,
+                OfficePhoneNumber = "317-635-2021",
+                Pastor = "Fr. Rick Nagel",
+                PostalCode = "46225",
+                State = "IN",
+                StreetAddress = "126 W. Georgia St."
+            };
+
+            context.Parishes.Add(parish);
         }
     }
 }
