@@ -10,6 +10,7 @@ namespace TotusTuus.Contracts
     public interface IParishService
     {
         IEnumerable<Parish> GetAllParishes();
+        IEnumerable<Parish> GetParishesByUserId(string userId);
         Parish GetParish(int id);
         int GetNumberOfParishes();
         bool AddParish(Parish parish);

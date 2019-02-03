@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TotusTuus.Contracts;
 using TotusTuus.Data;
+using TotusTuus.Data.Enums;
 
 namespace TotusTuus.Services
 {
@@ -27,6 +28,15 @@ namespace TotusTuus.Services
         public IEnumerable<Parish> GetAllParishes()
         {
             return _context.Parishes;
+        }
+
+        public IEnumerable<Parish> GetParishesByUserId(string userId)
+        {
+            //TODO: Refactor by making method in ParishRequestService
+            return _context.ParishRequests
+                .Where(p => p.RequestingUser.Id == userId 
+                            && p.Status == ParishRequestStatus.Accepted)
+                .Select(p => p.Parish);
         }
 
         public int GetNumberOfParishes()
