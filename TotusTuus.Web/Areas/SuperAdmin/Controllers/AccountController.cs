@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TotusTuus.Contracts;
+using TotusTuus.Data;
 using TotusTuus.Services;
 using TotusTuus.Web.Areas.SuperAdmin.Models.Account;
 
@@ -35,6 +36,34 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
             };
 
             return View(model);
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(AccountCreateViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            var user = new ApplicationUser()
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
+                UserName = model.UserName,
+            };
+
+            var succeeded = _userService.AddUser(user, model.Password);
+
+            if (succeeded)
+                return RedirectToAction("Index", new {area = "SuperAdmin"});
+
+            return View();
         }
     }
 }
