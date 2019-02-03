@@ -32,7 +32,7 @@ namespace TotusTuus.Services
 
         public IEnumerable<Parish> GetParishesByUserId(string userId)
         {
-            //TODO: Refactor by making method in ParishRequestService
+            //TODO: #17 Refactor by making method in ParishRequestService
             return _context.ParishRequests
                 .Where(p => p.RequestingUser.Id == userId 
                             && p.Status == ParishRequestStatus.Accepted)
