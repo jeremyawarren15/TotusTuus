@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using TotusTuus.Contracts;
 using TotusTuus.Data;
+using TotusTuus.Models.Parish;
 using TotusTuus.Web.Areas.SuperAdmin.Models.Parish;
 
 namespace TotusTuus.Web.Areas.SuperAdmin.Controllers

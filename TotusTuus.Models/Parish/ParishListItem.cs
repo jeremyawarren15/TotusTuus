@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TotusTuus.Web.Areas.SuperAdmin.Models.Parish
+namespace TotusTuus.Models.Parish
 {
     public class ParishListItem
     {

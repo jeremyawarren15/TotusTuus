@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+using TotusTuus.Models.Parish;
 
 namespace TotusTuus.Web.Areas.SuperAdmin.Models.Parish
 {

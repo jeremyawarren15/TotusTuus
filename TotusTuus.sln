@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotusTuus.Services", "Totus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotusTuus.Contracts", "TotusTuus.Contracts\TotusTuus.Contracts.csproj", "{41A2C899-1632-4467-9DB1-691EC746293B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotusTuus.Models", "TotusTuus.Models\TotusTuus.Models.csproj", "{AFDA4676-C422-4AF0-9EC0-F7604F087A34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{41A2C899-1632-4467-9DB1-691EC746293B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41A2C899-1632-4467-9DB1-691EC746293B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41A2C899-1632-4467-9DB1-691EC746293B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFDA4676-C422-4AF0-9EC0-F7604F087A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFDA4676-C422-4AF0-9EC0-F7604F087A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFDA4676-C422-4AF0-9EC0-F7604F087A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFDA4676-C422-4AF0-9EC0-F7604F087A34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

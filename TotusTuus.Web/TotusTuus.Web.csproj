@@ -201,11 +201,9 @@
     <Compile Include="Areas\SuperAdmin\Controllers\ParishController.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Account\AccountCreateViewModel.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Account\AccountIndexViewModel.cs" />
-    <Compile Include="Areas\SuperAdmin\Models\Account\AccountListItem.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Home\HomeIndexViewModel.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Parish\ParishCreateViewModel.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Parish\ParishIndexViewModel.cs" />
-    <Compile Include="Areas\SuperAdmin\Models\Parish\ParishListItem.cs" />
     <Compile Include="Areas\SuperAdmin\SuperAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -338,6 +336,10 @@
     <ProjectReference Include="..\TotusTuus.Data\TotusTuus.Data.csproj">
       <Project>{E0448211-3271-41DE-8EFC-6B7B5681AE79}</Project>
       <Name>TotusTuus.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TotusTuus.Models\TotusTuus.Models.csproj">
+      <Project>{AFDA4676-C422-4AF0-9EC0-F7604F087A34}</Project>
+      <Name>TotusTuus.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\TotusTuus.Services\TotusTuus.Services.csproj">
       <Project>{42BB8C78-7871-44CA-A74F-02D4A367732F}</Project>
