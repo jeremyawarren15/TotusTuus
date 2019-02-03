@@ -1,0 +1,31 @@
+﻿@model TotusTuus.Web.Areas.SuperAdmin.Models.Account.AccountIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { area="SuperAdmin" })
+</p>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.UsersList.FirstOrDefault().FullName)</th>
+        <th>@Html.DisplayNameFor(m => m.UsersList.FirstOrDefault().Email)</th>
+        <th></th>
+    </tr>
+
+@foreach (var user in Model.UsersList) {
+    <tr>
+        <td>@Html.DisplayFor(u => user.FullName)</td>
+        <td>@Html.DisplayFor(u => user.Email)</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {area = "SuperAdmin", id = user.Id}) |
+            @Html.ActionLink("Details", "Details", new {area = "SuperAdmin", id = user.Id}) |
+            @Html.ActionLink("Delete", "Delete", new {area = "SuperAdmin", id = user.Id})
+        </td>
+    </tr>
+}
+
+</table>

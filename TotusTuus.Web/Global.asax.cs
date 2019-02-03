@@ -7,6 +7,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
+using Microsoft.AspNet.Identity;
 using TotusTuus.Contracts;
 using TotusTuus.Data;
 using TotusTuus.Services;
@@ -44,6 +45,7 @@ namespace TotusTuus.Web
             builder.RegisterType<ApplicationDbContext>().AsSelf().InstancePerRequest();
 
             builder.RegisterType<ParishService>().As<IParishService>();
+            builder.RegisterType<UserService>().As<IUserService>();
 
             // Set the dependency resolver to be Autofac.
             var container = builder.Build();

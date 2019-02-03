@@ -196,8 +196,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\SuperAdmin\Controllers\AccountController.cs" />
     <Compile Include="Areas\SuperAdmin\Controllers\HomeController.cs" />
     <Compile Include="Areas\SuperAdmin\Controllers\ParishController.cs" />
+    <Compile Include="Areas\SuperAdmin\Models\Account\AccountIndexViewModel.cs" />
+    <Compile Include="Areas\SuperAdmin\Models\Account\AccountListItem.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Home\HomeIndexViewModel.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Parish\ParishCreateViewModel.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Parish\ParishIndexViewModel.cs" />
@@ -252,6 +255,7 @@
     <Content Include="Areas\SuperAdmin\Views\Home\Index.cshtml" />
     <Content Include="Areas\SuperAdmin\Views\Parish\Index.cshtml" />
     <Content Include="Areas\SuperAdmin\Views\Parish\Create.cshtml" />
+    <Content Include="Areas\SuperAdmin\Views\Account\Index.cshtml" />
     <None Include="Properties\PublishProfiles\TotusTuus - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
