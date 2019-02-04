@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using TotusTuus.Contracts;
 using TotusTuus.Data;
+using TotusTuus.Data.Enums;
 
 namespace TotusTuus.Services
 {
@@ -49,6 +50,15 @@ namespace TotusTuus.Services
         public IEnumerable<ApplicationUser> GetAllUsers()
         {
             return _context.Users;
+        }
+
+        public IEnumerable<ApplicationUser> GetUsersByParishId(int id)
+        {
+            var users = _context.ParishRequests
+                .Where(p => p.Parish.Id == id && p.Status == ParishRequestStatus.Accepted)
+                .Select(u => u.RequestingUser);
+
+            return users;
         }
     }
 }

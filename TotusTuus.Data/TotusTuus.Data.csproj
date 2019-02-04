@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201902010140262_AddedExtraTrackingFields.Designer.cs">
       <DependentUpon>201902010140262_AddedExtraTrackingFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902042314484_UpdatedParishFieldsToBeRequired.cs" />
+    <Compile Include="Migrations\201902042314484_UpdatedParishFieldsToBeRequired.Designer.cs">
+      <DependentUpon>201902042314484_UpdatedParishFieldsToBeRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Parish.cs" />
     <Compile Include="ParishRequest.cs" />
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902010140262_AddedExtraTrackingFields.resx">
       <DependentUpon>201902010140262_AddedExtraTrackingFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902042314484_UpdatedParishFieldsToBeRequired.resx">
+      <DependentUpon>201902042314484_UpdatedParishFieldsToBeRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

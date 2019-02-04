@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using TotusTuus.Contracts;
 using TotusTuus.Data;
+using TotusTuus.Models.Account;
 using TotusTuus.Models.Parish;
 using TotusTuus.Web.Areas.SuperAdmin.Models.Parish;
 
@@ -12,10 +14,12 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
     public class ParishController : Controller
     {
         private IParishService _parishService;
+        private IUserService _userService;
 
-        public ParishController(IParishService parishService)
+        public ParishController(IParishService parishService, IUserService userService)
         {
             _parishService = parishService;
+            _userService = userService;
         }
 
         // GET: SuperAdmin/Parish
@@ -30,7 +34,7 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
                         City = p.City,
                         State = p.State
                     });
-            
+
             var model = new ParishIndexViewModel()
             {
                 Parishes = parishes
@@ -65,9 +69,39 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
             };
 
             if (_parishService.AddParish(parish))
-                return RedirectToAction("Index", new { area = "SuperAdmin"});
+                return RedirectToAction("Index", new { area = "SuperAdmin" });
 
             return View();
+        }
+
+        public ActionResult Details(int id)
+        {
+            var parish = _parishService.GetParish(id);
+
+            var users = _userService
+                .GetUsersByParishId(id)
+                .Select(u => new AccountListItem()
+                {
+                    Id = u.Id,
+                    FullName = u.FullName,
+                    Email = u.Email
+                });
+
+            var model = new ParishDetails()
+            {
+                Id = id,
+                ParishName = parish.ParishName,
+                Address = $"{parish.StreetAddress}\t{parish.City}, {parish.State}\t{parish.PostalCode}",
+                Archdiocese = parish.Archdiocese,
+                CreatedDate = parish.CreatedDate,
+                ModifiedDate = parish.ModifiedDate,
+                OfficePhoneNumber = parish.OfficePhoneNumber,
+                Pastor = parish.Pastor,
+                Parishioners = users,
+                TimeSlots = null //TODO: This will have to be filled later
+            };
+
+            return View(model);
         }
     }
 }

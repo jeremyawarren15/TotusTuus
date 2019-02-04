@@ -15,7 +15,11 @@ namespace TotusTuus.Data
 
         [Required]
         public string ParishName { get; set; }
+
+        [Required]
         public string StreetAddress { get; set; }
+        
+        [Required]
         public string PostalCode { get; set; }
 
         [Required]
@@ -36,7 +40,6 @@ namespace TotusTuus.Data
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset? ModifiedDate { get; set; }
 
-        public virtual IEnumerable<ApplicationUser> Parishioners { get; set; }
         public virtual IEnumerable<TimeSlot> TimeSlots { get; set; }
     }
 }
