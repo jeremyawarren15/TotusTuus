@@ -34,9 +34,9 @@ namespace TotusTuus.Services
 
         public ApplicationUser GetUserById(string id)
         {
-            var user = _userManager.FindByIdAsync(id);
+            var user = _userManager.FindById(id);
 
-            return user.Result;
+            return user;
         }
 
         public bool UpdateUser(ApplicationUser user)

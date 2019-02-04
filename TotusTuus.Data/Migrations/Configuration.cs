@@ -76,8 +76,8 @@ namespace TotusTuus.Data.Migrations
             var store = new UserStore<ApplicationUser>(context);
             var manager = new UserManager<ApplicationUser>(store);
 
-            var superAdmin = new ApplicationUser { FirstName = "Super", LastName = "User", UserName = "super@test.com", Email = "super@test.com" };
-            var admin = new ApplicationUser { FirstName = "Admin", LastName = "User", UserName = "admin@test.com", Email = "admin@test.com" };
+            var superAdmin = new ApplicationUser { FirstName = "Super", LastName = "User", FullName = "Super User", UserName = "super@test.com", Email = "super@test.com" };
+            var admin = new ApplicationUser { FirstName = "Admin", LastName = "User", FullName = "Admin User", UserName = "admin@test.com", Email = "admin@test.com" };
 
             manager.Create(superAdmin, "Test1234!");
             manager.AddToRole(superAdmin.Id, "SuperAdmin");

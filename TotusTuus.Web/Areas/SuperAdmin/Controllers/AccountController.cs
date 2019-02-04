@@ -62,5 +62,30 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
 
             return View();
         }
+
+        public ActionResult Details(string id)
+        {
+            var user = _userService.GetUserById(id);
+
+            var details = new AccountDetails()
+            {
+                Id = user.Id,
+                FullName = user.FullName,
+                AcceptedParishes = null, //TODO: #29 This needs to get updated to show list of accepted parishes
+                AccessFailedCount = user.AccessFailedCount,
+                Email = user.Email,
+                EmailConfirmed = user.EmailConfirmed,
+                LockoutEnabled = user.LockoutEnabled,
+                PhoneNumber = user.PhoneNumber,
+                UserName = user.UserName
+            };
+
+            var model = new AccountDetailsViewModel()
+            {
+                Account = details
+            };
+
+            return View(model);
+        }
     }
 }
