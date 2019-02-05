@@ -13,8 +13,8 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
     [Authorize(Roles = "SuperAdmin")]
     public class ParishController : Controller
     {
-        private IParishService _parishService;
-        private IUserService _userService;
+        private readonly IParishService _parishService;
+        private readonly IUserService _userService;
 
         public ParishController(IParishService parishService, IUserService userService)
         {
@@ -30,6 +30,7 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
                 .Select(
                     p => new ParishListItem()
                     {
+                        Id = p.Id,
                         ParishName = p.ParishName,
                         City = p.City,
                         State = p.State
@@ -87,14 +88,14 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
                     Email = u.Email
                 });
 
+            //TODO: need to find a solution to the ModifiedDate problem
             var model = new ParishDetails()
             {
                 Id = id,
                 ParishName = parish.ParishName,
-                Address = $"{parish.StreetAddress}\t{parish.City}, {parish.State}\t{parish.PostalCode}",
+                Address = $"{parish.StreetAddress} {parish.City}, {parish.State} {parish.PostalCode}",
                 Archdiocese = parish.Archdiocese,
-                CreatedDate = parish.CreatedDate,
-                ModifiedDate = parish.ModifiedDate,
+                CreatedDate = parish.CreatedDate.LocalDateTime,
                 OfficePhoneNumber = parish.OfficePhoneNumber,
                 Pastor = parish.Pastor,
                 Parishioners = users,

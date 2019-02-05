@@ -11,7 +11,7 @@ namespace TotusTuus.Services
 {
     public class ParishService : IParishService
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public ParishService(ApplicationDbContext context)
         {
