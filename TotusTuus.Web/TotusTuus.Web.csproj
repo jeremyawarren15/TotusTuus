@@ -259,6 +259,7 @@
     <Content Include="Areas\SuperAdmin\Views\Account\Create.cshtml" />
     <Content Include="Areas\SuperAdmin\Views\Account\Details.cshtml" />
     <Content Include="Areas\SuperAdmin\Views\Parish\Details.cshtml" />
+    <Content Include="Areas\SuperAdmin\Views\Parish\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\TotusTuus - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

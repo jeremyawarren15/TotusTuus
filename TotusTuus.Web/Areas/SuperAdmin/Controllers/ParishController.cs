@@ -104,5 +104,46 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
 
             return View(model);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var parish = _parishService.GetParish(id);
+
+            var model = new ParishEdit()
+            {
+                Id = parish.Id,
+                ParishName = parish.ParishName,
+                StreetAddress = parish.StreetAddress,
+                OfficePhoneNumber = parish.OfficePhoneNumber,
+                Archdiocese = parish.Archdiocese,
+                Pastor = parish.Pastor,
+                City = parish.City,
+                State = parish.State,
+                PostalCode = parish.PostalCode
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(ParishEdit model)
+        {
+            var parish = new Parish()
+            {
+                Id = model.Id,
+                ParishName = model.ParishName,
+                StreetAddress = model.StreetAddress,
+                OfficePhoneNumber = model.OfficePhoneNumber,
+                Archdiocese = model.Archdiocese,
+                Pastor = model.Pastor,
+                City = model.City,
+                State = model.State,
+                PostalCode = model.PostalCode
+            };
+
+            _parishService.UpdateParish(parish);
+
+            return RedirectToAction("Index", new { areas = "SuperAdmin" });
+        }
     }
 }

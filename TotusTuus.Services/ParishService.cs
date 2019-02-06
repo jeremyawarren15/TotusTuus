@@ -54,6 +54,8 @@ namespace TotusTuus.Services
         {
             var oldParish = GetParish(parish.Id);
 
+            parish.ModifiedDate = DateTimeOffset.UtcNow;
+
             _context.Entry(oldParish)
                 .CurrentValues
                 .SetValues(parish);
