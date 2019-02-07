@@ -62,5 +62,36 @@
 </div>
 <p>
     @*@Html.ActionLink("Edit", "Edit", new { id = Model.Account.Id }) |*@
-    @Html.ActionLink("Back to List", "Index", "Account", new { area = "SuperAdmin"}, null)
+    @Html.ActionLink("Back to List", "Index", "Account", new { area = "SuperAdmin" }, null)
 </p>
+
+@if (Model.Account.AcceptedParishes.Any())
+{
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Account.AcceptedParishes.FirstOrDefault().ParishName)</th>
+            <th>@Html.DisplayNameFor(m => m.Account.AcceptedParishes.FirstOrDefault().City)</th>
+            <th>@Html.DisplayNameFor(m => m.Account.AcceptedParishes.FirstOrDefault().State)</th>
+            <th></th>
+        </tr>
+
+        @foreach (var parish in Model.Account.AcceptedParishes)
+        {
+            <tr>
+                <td>@Html.DisplayFor(u => parish.ParishName)</td>
+                <td>@Html.DisplayFor(u => parish.City)</td>
+                <td>@Html.DisplayFor(u => parish.State)</td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new {area = "SuperAdmin", id = user.Id}) |*@
+                    @Html.ActionLink("Details", "Details", new { controller = "Parish", area = "SuperAdmin", id = parish.Id }) |
+                    @*@Html.ActionLink("Delete", "Delete", new {area = "SuperAdmin", id = user.Id})*@
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+else
+{
+    <h2>Not accepted at any parishes.</h2>
+}

@@ -3,17 +3,20 @@ using System.Web.Mvc;
 using TotusTuus.Contracts;
 using TotusTuus.Data;
 using TotusTuus.Models.Account;
+using TotusTuus.Models.Parish;
 using TotusTuus.Web.Areas.SuperAdmin.Models.Account;
 
 namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
 {
     public class AccountController : Controller
     {
-        private IUserService _userService;
+        private readonly IUserService _userService;
+        private readonly IParishService _parishService;
 
-        public AccountController(IUserService userService)
+        public AccountController(IUserService userService, IParishService parishService)
         {
             _userService = userService;
+            _parishService = parishService;
         }
 
         // GET: SuperAdmin/Account
@@ -66,12 +69,14 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
         public ActionResult Details(string id)
         {
             var user = _userService.GetUserById(id);
+            var parishes = _parishService.GetParishesByUserId(id)
+                .Cast<ParishListItem>();
 
             var details = new AccountDetails()
             {
                 Id = user.Id,
                 FullName = user.FullName,
-                AcceptedParishes = null, //TODO: #29 This needs to get updated to show list of accepted parishes
+                AcceptedParishes = parishes,
                 AccessFailedCount = user.AccessFailedCount,
                 Email = user.Email,
                 EmailConfirmed = user.EmailConfirmed,
