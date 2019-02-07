@@ -204,6 +204,8 @@
     <Compile Include="Areas\SuperAdmin\Models\Account\AccountCreateViewModel.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Account\AccountIndexViewModel.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Home\HomeIndexViewModel.cs" />
+    <Compile Include="Areas\SuperAdmin\Models\ParishRequest\ParishRequestCreateGetViewModel.cs" />
+    <Compile Include="Areas\SuperAdmin\Models\ParishRequest\ParishRequestCreateViewModel.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Parish\ParishCreateViewModel.cs" />
     <Compile Include="Areas\SuperAdmin\Models\Parish\ParishIndexViewModel.cs" />
     <Compile Include="Areas\SuperAdmin\SuperAdminAreaRegistration.cs" />
@@ -261,6 +263,7 @@
     <Content Include="Areas\SuperAdmin\Views\Account\Details.cshtml" />
     <Content Include="Areas\SuperAdmin\Views\Parish\Details.cshtml" />
     <Content Include="Areas\SuperAdmin\Views\Parish\Edit.cshtml" />
+    <Content Include="Areas\SuperAdmin\Views\ParishRequest\Create.cshtml" />
     <None Include="Properties\PublishProfiles\TotusTuus - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -327,7 +330,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\SuperAdmin\Views\ParishRequest\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
