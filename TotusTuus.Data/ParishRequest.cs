@@ -17,6 +17,8 @@ namespace TotusTuus.Data
         [DefaultValue(ParishRequestStatus.Pending)]
         public ParishRequestStatus Status { get; set; }
 
+        public bool IsHomeParish { get; set; }
+
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset? DecisionDate { get; set; }
 
