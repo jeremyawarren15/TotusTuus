@@ -12,6 +12,7 @@ namespace TotusTuus.Contracts
         IEnumerable<Parish> GetAllParishes();
         IEnumerable<Parish> GetParishesByUserId(string userId);
         Parish GetParish(int id);
+        Parish GetHomeParish(string userId);
         int GetNumberOfParishes();
         bool AddParish(Parish parish);
         bool UpdateParish(Parish parish);

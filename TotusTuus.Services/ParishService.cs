@@ -12,10 +12,12 @@ namespace TotusTuus.Services
     public class ParishService : IParishService
     {
         private readonly ApplicationDbContext _context;
+        private readonly IParishRequestService _parishRequestService;
 
-        public ParishService(ApplicationDbContext context)
+        public ParishService(ApplicationDbContext context, IParishRequestService parishRequestService)
         {
             _context = context;
+            _parishRequestService = parishRequestService;
         }
 
         public bool AddParish(Parish parish)
@@ -32,10 +34,7 @@ namespace TotusTuus.Services
 
         public IEnumerable<Parish> GetParishesByUserId(string userId)
         {
-            //TODO: #17 Refactor by making method in ParishRequestService
-            return _context.ParishRequests
-                .Where(p => p.RequestingUser.Id == userId 
-                            && p.Status == ParishRequestStatus.Accepted)
+            return _parishRequestService.GetAcceptedParishRequests(userId)
                 .Select(p => p.Parish);
         }
 
@@ -61,6 +60,13 @@ namespace TotusTuus.Services
                 .SetValues(parish);
 
             return _context.SaveChanges() == 1;
+        }
+
+        public Parish GetHomeParish(string userId)
+        {
+            return _parishRequestService.GetAcceptedParishRequests(userId)
+                .First(p => p.IsHomeParish)
+                .Parish;
         }
     }
 }

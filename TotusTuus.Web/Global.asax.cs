@@ -46,6 +46,7 @@ namespace TotusTuus.Web
 
             builder.RegisterType<ParishService>().As<IParishService>();
             builder.RegisterType<UserService>().As<IUserService>();
+            builder.RegisterType<ParishRequestService>().As<IParishRequestService>();
 
             // Set the dependency resolver to be Autofac.
             var container = builder.Build();
