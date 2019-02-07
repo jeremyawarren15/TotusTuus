@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 using TotusTuus.Contracts;
 using TotusTuus.Data;
+using TotusTuus.Extentions;
 using TotusTuus.Models.Account;
 using TotusTuus.Models.Parish;
 using TotusTuus.Web.Areas.SuperAdmin.Models.Parish;
@@ -109,18 +110,7 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
         {
             var parish = _parishService.GetParish(id);
 
-            var model = new ParishEdit()
-            {
-                Id = parish.Id,
-                ParishName = parish.ParishName,
-                StreetAddress = parish.StreetAddress,
-                OfficePhoneNumber = parish.OfficePhoneNumber,
-                Archdiocese = parish.Archdiocese,
-                Pastor = parish.Pastor,
-                City = parish.City,
-                State = parish.State,
-                PostalCode = parish.PostalCode
-            };
+            var model = parish.Cast<ParishEdit>();
 
             return View(model);
         }
@@ -128,18 +118,7 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Controllers
         [HttpPost]
         public ActionResult Edit(ParishEdit model)
         {
-            var parish = new Parish()
-            {
-                Id = model.Id,
-                ParishName = model.ParishName,
-                StreetAddress = model.StreetAddress,
-                OfficePhoneNumber = model.OfficePhoneNumber,
-                Archdiocese = model.Archdiocese,
-                Pastor = model.Pastor,
-                City = model.City,
-                State = model.State,
-                PostalCode = model.PostalCode
-            };
+            var parish = model.Cast<Parish>();
 
             _parishService.UpdateParish(parish);
 
