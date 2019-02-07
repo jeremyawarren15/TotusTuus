@@ -14,7 +14,7 @@
             </div>
             <div class="card-body">
                 <p class="card-text">@Model.TotalParishes</p>
-                @Html.ActionLink("Go to Parishes", "Index", new {controller = "Parish", area = "SuperAdmin"}, new {@class = "btn btn-primary"})
+                @Html.ActionLink("Go to Parishes", "Index", new {controller = "Parish", area = "SuperAdmin"}, new {@class = "card-link"})
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
             </div>
             <div class="card-body">
                 <p class="card-text">@Model.TotalUsers</p>
-                @Html.ActionLink("Go to Users", "Index", new {controller = "Account", area = "SuperAdmin"}, new {@class = "btn btn-primary"})
+                @Html.ActionLink("Go to Users", "Index", new {controller = "Account", area = "SuperAdmin"}, new {@class = "card-link"})
             </div>
         </div>
     </div>
