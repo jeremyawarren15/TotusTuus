@@ -341,9 +341,9 @@
       <Project>{E0448211-3271-41DE-8EFC-6B7B5681AE79}</Project>
       <Name>TotusTuus.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TotusTuus.Extentions\TotusTuus.Extentions.csproj">
-      <Project>{76EB00D2-D39A-4D92-8CF2-7B80799AA16D}</Project>
-      <Name>TotusTuus.Extentions</Name>
+    <ProjectReference Include="..\TotusTuus.Extensions\TotusTuus.Extensions.csproj">
+      <Project>{35603F69-4E20-47EB-B9A7-DD393C5F9E52}</Project>
+      <Name>TotusTuus.Extensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\TotusTuus.Models\TotusTuus.Models.csproj">
       <Project>{AFDA4676-C422-4AF0-9EC0-F7604F087A34}</Project>

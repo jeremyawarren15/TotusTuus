@@ -6,5 +6,9 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
+    <ProjectGuid>{76EB00D2-D39A-4D92-8CF2-7B80799AA16D}</ProjectGuid>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ObjectExtensions.cs" />
+  </ItemGroup>
 </Project>
