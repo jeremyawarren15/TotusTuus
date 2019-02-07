@@ -12,6 +12,7 @@ namespace TotusTuus.Contracts
         bool AddUser(ApplicationUser user, string password);
         IEnumerable<ApplicationUser> GetAllUsers();
         IEnumerable<ApplicationUser> GetUsersByParishId(int id);
+        int GetNumberOfUsers();
         ApplicationUser GetUserById(string id);
         bool UpdateUser(ApplicationUser user);
     }

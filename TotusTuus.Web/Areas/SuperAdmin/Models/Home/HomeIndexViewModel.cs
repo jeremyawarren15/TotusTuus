@@ -8,5 +8,6 @@ namespace TotusTuus.Web.Areas.SuperAdmin.Models.Home
     public class HomeIndexViewModel
     {
         public int TotalParishes { get; set; }
+        public int TotalUsers { get; set; }
     }
 }

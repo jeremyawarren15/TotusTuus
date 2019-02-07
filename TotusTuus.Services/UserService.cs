@@ -60,5 +60,10 @@ namespace TotusTuus.Services
 
             return users;
         }
+
+        public int GetNumberOfUsers()
+        {
+            return GetAllUsers().Count();
+        }
     }
 }

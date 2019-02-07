@@ -9,10 +9,24 @@
 <div class="row">
     <div class="col-md-4">
         <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Parishes
+            </div>
             <div class="card-body">
-                <h5 class="card-title">Parishes</h5>
                 <p class="card-text">@Model.TotalParishes</p>
-                @Html.ActionLink("Go to Parishes", "Index", new { controller = "Parish", area = "SuperAdmin" }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Go to Parishes", "Index", new {controller = "Parish", area = "SuperAdmin"}, new {@class = "btn btn-primary"})
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Users
+            </div>
+            <div class="card-body">
+                <p class="card-text">@Model.TotalUsers</p>
+                @Html.ActionLink("Go to Users", "Index", new {controller = "Account", area = "SuperAdmin"}, new {@class = "btn btn-primary"})
             </div>
         </div>
     </div>
