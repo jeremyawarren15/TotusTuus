@@ -1,13 +1,19 @@
 ﻿@model TotusTuus.Web.Areas.SuperAdmin.Models.Home.HomeIndexViewModel
 @{
-    ViewBag.Title = "Home";
+    ViewBag.Title = "Dashboard";
 }
 
 <h2>@ViewBag.Title</h2>
 
+
 <div class="row">
     <div class="col-md-4">
-        <h2>Parishes</h2>
-        <p>@Model.TotalParishes</p>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Parishes</h5>
+                <p class="card-text">@Model.TotalParishes</p>
+                @Html.ActionLink("Go to Parishes", "Index", new { controller = "Parish", area = "SuperAdmin" }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
     </div>
 </div>
