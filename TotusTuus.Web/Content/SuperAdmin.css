@@ -27,7 +27,7 @@ textarea {
 /* Grid layout */
 #header {
     grid-area: header;
-    background-color: #181726;
+    background-color: #25274D;
     display: flex;
     align-items: center;
     padding-left: 15px;
@@ -36,23 +36,24 @@ textarea {
 
 #nav {
     grid-area: nav;
-    background-color: #385259;
+    background-color: #464866;
+    /* Selected link color 2E9CCA */
 }
 
 #content-bar {
     grid-area: content-bar;
-    background-color: #A87700;
+    background-color: #AAABB8;
 }
 
 #content {
     grid-area: content;
-    background-color: #D8D6C4;
+    background-color: #F0F0F7;
     overflow: auto;
 }
 
 #footer {
     grid-area: footer;
-    background-color: white;
+    background-color: #F0F0F7;
 }
 
 #header,
@@ -69,11 +70,11 @@ textarea {
     padding-right: 15px;
 }
 
-#content-bar > h2 {
-    margin: 0;
-    font-size: 1.2em;
-    color: white;
-}
+    #content-bar > h2 {
+        margin: 0;
+        font-size: 1.2em;
+        color: #544759;
+    }
 
 .grid-container {
     display: grid;
@@ -105,4 +106,12 @@ textarea {
 
     #header > #home-button:hover {
         color: white
+    }
+
+    #header > .app-name {
+        color: #2E9CAA;
+    }
+
+    #header > * {
+        margin-right: 15px;
     }
