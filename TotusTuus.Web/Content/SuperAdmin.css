@@ -1,0 +1,108 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2rem;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Grid layout */
+#header {
+    grid-area: header;
+    background-color: #181726;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#nav {
+    grid-area: nav;
+    background-color: #385259;
+}
+
+#content-bar {
+    grid-area: content-bar;
+    background-color: #A87700;
+}
+
+#content {
+    grid-area: content;
+    background-color: #D8D6C4;
+    overflow: auto;
+}
+
+#footer {
+    grid-area: footer;
+    background-color: white;
+}
+
+#header,
+#nav,
+#content {
+    padding: 20px;
+}
+
+#content-bar,
+#footer {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#content-bar > h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+       'header header'
+       'nav content-bar'
+       'nav content'
+       'nav footer';
+    grid-template-rows: 56px 40px 1fr 40px;
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Custom Styles */
+#header > #home-button {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+    #header > #home-button:link {
+        color: white
+    }
+
+    #header > #home-button:visited {
+        color: white
+    }
+
+    #header > #home-button:hover {
+        color: white
+    }
