@@ -1,5 +1,13 @@
-﻿<nav class="nav-vert">
-    @Html.ActionLink("Home", "Index", "Home")
-    @Html.ActionLink("Parishes", "Index", "Parish")
-    @Html.ActionLink("Users", "Index", "Account")
+﻿@helper NavLink(string action, string controller,string text, string icon)
+{
+    <a href="@Url.Action(action, controller)">
+        <i class="fas fa-@icon"></i>
+        @text
+    </a>
+}
+
+<nav class="nav-vert">
+    @NavLink("Index", "Home", "Home", "home")
+    @NavLink("Index", "Parish", "Parishes", "church")
+    @NavLink("Index", "Account", "Users", "users")
 </nav>

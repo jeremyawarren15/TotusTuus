@@ -27,6 +27,7 @@ namespace TotusTuus.Web
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/SuperAdmin/css").Include(
+                "~/Content/fontawesome-all.css",
                 "~/Content/bootstrap.css",
                 "~/Content/SuperAdmin.css"));
         }
