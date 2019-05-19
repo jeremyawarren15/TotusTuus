@@ -57,7 +57,6 @@ textarea {
 }
 
 #header,
-#nav,
 #content {
     padding: 20px;
 }
@@ -78,11 +77,7 @@ textarea {
 
 .grid-container {
     display: grid;
-    grid-template-areas:
-       'header header'
-       'nav content-bar'
-       'nav content'
-       'nav footer';
+    grid-template-areas: 'header header' 'nav content-bar' 'nav content' 'nav footer';
     grid-template-rows: 56px 40px 1fr 40px;
     grid-template-columns: 200px 1fr;
     height: 100vh;
@@ -108,10 +103,27 @@ textarea {
         color: white
     }
 
-    #header > .app-name {
-        color: #2E9CAA;
+#header > .app-name {
+    color: #2E9CAA;
+}
+
+#header > * {
+    margin-right: 15px;
+}
+
+#nav > .nav-vert {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+    #nav > .nav-vert > a {
+        color: #ffffff;
+        line-height: 1rem;
+        padding: 10px 20px;
     }
 
-    #header > * {
-        margin-right: 15px;
-    }
+        #nav > .nav-vert > a:hover {
+            background-color: #57597f;
+            text-decoration: none;
+        }

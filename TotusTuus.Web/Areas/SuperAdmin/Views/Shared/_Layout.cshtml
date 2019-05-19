@@ -7,38 +7,6 @@
     @Styles.Render("~/SuperAdmin/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-@*<body>
-<div id="primary-nav" class="fixed-top bg-danger">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            @Html.ActionLink("TotusTuus", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        @Html.ActionLink("Dashboard", "Index", "Home", new { area = "SuperAdmin" }, new { @class = "nav-link" })
-                    </li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </nav>
-    </div>
-</div>
-
-<div class="container body-content">
-    @RenderBody()
-    <hr />
-    <footer>
-        <p>&copy; @DateTime.Now.Year - TotusTuus</p>
-    </footer>
-</div>
-
-
-
-</body>*@
-
 <body>
 <div class="grid-container">
     <div id="header">            
@@ -46,7 +14,9 @@
         <span class="app-name">Super Admin Portal</span>
     </div>
 
-    <div id="nav"></div>
+    <div id="nav">
+        @Html.Partial("SuperAdminNavigation")
+    </div>
     
     <div id="content-bar">
         <h2>@ViewBag.Title</h2>
